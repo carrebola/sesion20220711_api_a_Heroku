@@ -14,7 +14,7 @@ const nombre = process.env.NOMBRE || 'Anónimo'
 app.get('/' , (req,res)=>{
     res.status(200).json({
         error:false,
-        mensaje: 'Estás en la api de ' + nombre
+        mensaje: 'Estás en la api de ' + nombre ,
         puerto: process.env.PORT
     })
 })
