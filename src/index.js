@@ -19,8 +19,31 @@ app.get('/' , (req,res)=>{
     })
 })
 
+app.get('/api' , (req,res)=>{
+    res.status(200).json({
+        error: false,
+        mensaje: 'Datos de usuarios',
+        datos: [
+            {
+                nombre: 'paco',
+                apellido: 'perro'
+            },
+            {
+                nombre: 'manolo',
+                apellido: 'sanchez'
+            },
+            {
+                nombre: 'Eva',
+                apellido: 'Calao'
+            }
+        ]
+    
+    })
+   
+})
 
 
-app.listen(process.env.PORT, ()=>{
-    console.log('Servidor escuchando en puerto ' + process.env.PORT + ' del ordenador de ' + nombre);
+puerto = process.env.PORT || 8000
+app.listen(puerto, ()=>{
+    console.log('Servidor escuchando en puerto ' + puerto + ' del ordenador de ' + nombre);
 })
